@@ -1,0 +1,12 @@
+{
+  "Group": "com.xdboy",
+  "Name": "ScoreboardPlugin",
+  "Version": "1.0.0",
+  "Description": "With this plugin you can easily configure a scoreboard",
+  "ServerVersion": "*",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": true,
+  "Main": "com.xdboy.ScoreboardPlugin"
+}

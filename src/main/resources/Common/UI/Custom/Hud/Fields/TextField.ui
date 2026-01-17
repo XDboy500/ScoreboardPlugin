@@ -1,0 +1,7 @@
+Label #FieldLabel {
+  Style: (
+    FontSize: 20,
+    TextColor: #ffffffff
+  );
+  Text: "Placeholder";
+}

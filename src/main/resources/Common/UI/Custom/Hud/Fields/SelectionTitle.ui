@@ -1,0 +1,7 @@
+Label #SectionTitle {
+  Style: (
+    FontSize: 26,
+    TextColor: #ff55ffff
+  );
+  Text: "Section";
+}

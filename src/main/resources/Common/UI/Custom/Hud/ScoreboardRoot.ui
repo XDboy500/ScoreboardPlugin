@@ -1,0 +1,15 @@
+Group {
+  LayoutMode: Right;
+  Anchor: (Top: 20, Right: 20);
+
+  Group #ScoreboardPanel {
+    Background: #000000(0.2);
+    Anchor: (Width: 360, Height: 480);
+    Padding: (Horizontal: 20, Vertical: 15);
+    LayoutMode: Top;
+
+    Group #ScoreboardContent {
+      LayoutMode: Top;
+    }
+  }
+}
