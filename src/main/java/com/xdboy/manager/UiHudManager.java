@@ -32,6 +32,8 @@ public class UiHudManager extends CustomUIHud {
                     ui.append("#ScoreboardContent[" + index + "]", "Hud/Fields/SelectionTitle.ui");
                     ui.set("#ScoreboardContent[" + index + "] #SectionTitle.Text", field.text);
 
+                    UiStyleManager.setStyle(ui, "#ScoreboardContent[" + index + "] #SectionTitle.Style", field.getSize(), field.getHexColor(), field.getIsCenterValue());
+
                     index++;
                 }
 
@@ -40,7 +42,7 @@ public class UiHudManager extends CustomUIHud {
                     ui.append("#ScoreboardContent[" + index + "]", "Hud/Fields/TextField.ui");
                     ui.set("#ScoreboardContent[" + index + "] #FieldLabel.Text", field.text);
 
-                    UiStyleManager.setStyle(ui, "#ScoreboardContent[" + index + "] #FieldLabel.Style", field.size, field.getHexColor());
+                    UiStyleManager.setStyle(ui, "#ScoreboardContent[" + index + "] #FieldLabel.Style", field.getSize(), field.getHexColor(), field.getIsCenterValue());
 
                     index++;
                 }
@@ -48,6 +50,8 @@ public class UiHudManager extends CustomUIHud {
                 case ScoreboardFieldType.SPACER -> {
                     ui.appendInline("#ScoreboardContent", "Group { LayoutMode: Top; Anchor: (Bottom: 0); }");
                     ui.append("#ScoreboardContent[" + index + "]", "Hud/Fields/Spacer.ui");
+
+                    UiStyleManager.setStyle(ui, "#ScoreboardContent[" + index + "] #SpacerField.Anchor", field.getSpace());
 
                     index++;
                 }

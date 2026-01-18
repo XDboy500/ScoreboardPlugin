@@ -1,6 +1,7 @@
 Label #SectionTitle {
   Style: (
     FontSize: 26,
+    Alignment: Center,
     TextColor: #ff55ffff
   );
   Text: "Section";

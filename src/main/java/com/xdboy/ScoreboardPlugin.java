@@ -24,22 +24,27 @@ public class ScoreboardPlugin extends JavaPlugin {
         ScoreboardConfig config = ScoreboardConfigManager.get();
 
         // TITLE is no different to TEXT at the moment
-        config.addField(new ScoreboardField(ScoreboardFieldType.TITLE, "My Hytale Server", 36, Color.CYAN));
+        config.addField(new ScoreboardField(ScoreboardFieldType.TITLE, "My Hytale Server")
+                .size(36)
+                .color(Color.CYAN)
+                .isCenter(true));
+        config.addField(new ScoreboardField().space(5));
+        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "Spawn City").color(Color.YELLOW).isCenter(true));
+        config.addField(new ScoreboardField().space(15));
+        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "Stats").size(26).color(Color.MAGENTA));
         config.addField(new ScoreboardField());
-        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "Spawn City", Color.YELLOW));
-        config.addField(new ScoreboardField());
-        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "Stats", 26, Color.MAGENTA));
         config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Rank: Premium"));
-        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Prestige: 1", Color.CYAN));
-        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Level: 12", Color.GREEN));
+        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Prestige: 1").color(Color.CYAN));
+        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Level: 12").color(Color.GREEN));
         config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Completed Tasks: 7/10"));
-        config.addField(new ScoreboardField());;
-        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "Balances", 26, Color.MAGENTA));
-        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Silver: 1234", Color.GRAY));
-        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Gold: 56", Color.YELLOW));
-        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Prestige Tokens: 2", Color.CYAN));
-        config.addField(new ScoreboardField());;
-        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "www.myserver.net"));
+        config.addField(new ScoreboardField().space(15));
+        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "Balances").size(26).color(Color.MAGENTA));
+        config.addField(new ScoreboardField());
+        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Silver: 1234").color(Color.GRAY));
+        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Gold: 56").color(Color.YELLOW));
+        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "- Prestige Tokens: 2").color(Color.CYAN));
+        config.addField(new ScoreboardField().space(20));
+        config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "www.myserver.net").color(Color.YELLOW).isCenter(true).size(16));
 
         // PlayerJoin creates HUD
         this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, PlayerJoinListener::onFirstJoin);

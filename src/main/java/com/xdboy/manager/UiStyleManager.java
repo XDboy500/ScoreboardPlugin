@@ -26,11 +26,33 @@ final class UiStyleManager {
             UICommandBuilder ui,
             String selector,
             int fontSize,
-            String color
+            String color,
+            boolean isCenter
     ) {
         BsonDocument style = new BsonDocument();
         style.put("FontSize", new BsonInt32(fontSize));
         style.put("TextColor", new BsonString(color));
+
+        if (isCenter)
+        {
+            style.put("Alignment", new BsonString("Center"));
+        }
+
+        try {
+            SET_BSON.invoke(ui, selector, style);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    static void setStyle(
+            UICommandBuilder ui,
+            String selector,
+            int space
+    ) {
+        BsonDocument style = new BsonDocument();
+        style.put("Height", new BsonInt32(space));
 
         try {
             SET_BSON.invoke(ui, selector, style);

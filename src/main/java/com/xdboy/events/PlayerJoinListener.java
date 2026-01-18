@@ -27,25 +27,6 @@ public class PlayerJoinListener {
 
         assert playerRef != null;
 
-        // Players who joins for the first time
-        if(player.isFirstSpawn())
-        {
-            EventTitleUtil.showEventTitleToPlayer(
-                    playerRef,
-                    Message.raw("Hello " + player.getDisplayName()),
-                    Message.raw("Welcome on SERVERNAME"),
-                    false
-            );
-        }
-
-        // every Player who join the server
-        EventTitleUtil.showEventTitleToPlayer(
-                playerRef,
-                Message.raw("Nice to see you again " + player.getDisplayName()),
-                Message.raw("Welcome back on SERVERNAME"),
-                false
-        );
-
         World world = player.getWorld();
         assert world != null;
 
