@@ -4,7 +4,7 @@ import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.xdboy.config.ScoreboardConfig;
-import com.xdboy.events.PlayerJoinListener;
+import com.xdboy.events.PlayerJoinEvent;
 import com.xdboy.manager.ScoreboardConfigManager;
 import com.xdboy.models.ScoreboardField;
 import com.xdboy.models.ScoreboardFieldType;
@@ -47,6 +47,6 @@ public class ScoreboardPlugin extends JavaPlugin {
         config.addField(new ScoreboardField(ScoreboardFieldType.TEXT, "www.myserver.net").color(Color.YELLOW).isCenter(true).size(16));
 
         // PlayerJoin creates HUD
-        this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, PlayerJoinListener::onFirstJoin);
+        this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, PlayerJoinEvent::onFirstJoin);
     }
 }

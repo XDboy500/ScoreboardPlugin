@@ -5,9 +5,6 @@ import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.xdboy.models.ScoreboardField;
 import com.xdboy.models.ScoreboardFieldType;
-import org.bson.BsonDocument;
-import org.bson.BsonInt32;
-import org.bson.BsonString;
 
 import javax.annotation.Nonnull;
 
