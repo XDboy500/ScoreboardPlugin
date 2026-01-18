@@ -5,6 +5,9 @@ import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.xdboy.models.ScoreboardField;
 import com.xdboy.models.ScoreboardFieldType;
+import org.bson.BsonDocument;
+import org.bson.BsonInt32;
+import org.bson.BsonString;
 
 import javax.annotation.Nonnull;
 
@@ -37,7 +40,7 @@ public class UiHudManager extends CustomUIHud {
                     ui.append("#ScoreboardContent[" + index + "]", "Hud/Fields/TextField.ui");
                     ui.set("#ScoreboardContent[" + index + "] #FieldLabel.Text", field.text);
 
-                    // ui.set("#ScoreboardContent[" + index + "] #FieldLabel.Style", "( FontSize: 20, TextColor: #aaffffff )");
+                    UiStyleManager.setStyle(ui, "#ScoreboardContent[" + index + "] #FieldLabel.Style", field.size, field.getHexColor());
 
                     index++;
                 }
@@ -51,5 +54,4 @@ public class UiHudManager extends CustomUIHud {
             }
         }
     }
-
 }
